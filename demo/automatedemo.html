@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="../src/filesaver.min.js"></script> -->
+    <script src="../src/download.js"></script>
+    <script src="../src/html2canvas.min.js"></script>
+    <script src="../src/whammy.js"></script>
+    <script src="../src/main.js"></script>  
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;border-color:#4D4D4D;border:none; visibility: hidden}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:rgb(251, 251, 251);background-color:rgb(114, 101, 101);}
+    .tg .tg-yw4l{vertical-align:top}
+    #instructions {  text-align: center; color: red; font-family: Arial, sans-serif; font-weight: bold; font-size: 20px; visibility: hidden}
+    </style>
+</head>
+<body>
+    <div id="container">
+    <table id="table" class="tg">
+      <tr>
+        <th class="tg-yw4l"> </th>
+        <th class="tg-yw4l">#</th>
+        <th class="tg-yw4l"></th>
+        <th class="tg-yw4l">Lot's description</th>
+        <th class="tg-yw4l">Starting date<br></th>
+        <th class="tg-yw4l">Planned ending date</th>
+        <th class="tg-yw4l">Remaining time</th>
+        <th class="tg-yw4l">Status</th>
+        <th class="tg-yw4l">Reference price</th>
+        <th class="tg-yw4l">Best supplier</th>
+        <th class="tg-yw4l">Net savings</th>
+        <th class="tg-yw4l">Gross savings</th>
+        <th class="tg-yw4l">Current bid</th>
+        <th onclick="highlight(this)" class="tg-yw4l">New step in</th>
+      </tr>
+      <tr>
+        <td id="confirm-button" class="tg-yw4l"><button  onclick="pwd()">Accept bid</button></td>
+        <td class="tg-yw4l">1</td>
+        <td class="tg-yw4l"></td>
+        <td id="description" onclick="highlight(this)" class="tg-yw4l">Leprechaun's pot of gold</td>
+        <td id="start-date" onclick="highlight(this)" class="tg-yw4l">09/11/2017</td>
+        <td id="end-date" onclick="highlight(this)" class="tg-yw4l">09/11/2017</td>
+        <td id="time" onclick="highlight(this)" class="tg-yw4l"></td>
+        <td id="status" onclick="highlight(this)" class="tg-yw4l">Done</td>
+        <td id="ref-price" onclick="highlight(this)" class="tg-yw4l">50.000</td>
+        <td id="supplier" onclick="highlight(this)" class="tg-yw4l">LEPRECHAUN & CO INC</td>
+        <td id="net-savings" onclick="highlight(this)" class="tg-yw4l">20.000</td>
+        <td id="gross-savings" onclick="highlight(this)" class="tg-yw4l">20.000</td>
+        <td id="current-bid" onclick="highlight(this)" id="current-bid" class="tg-yw4l">30.000</td>
+        <td id="step-in" class="tg-yw4l"></td>
+      </tr>
+    </table>
+    <div id ="form">
+        <br/>
+    </div>
+    <div id ="instructions">
+        <br/>
+        <br/>
+    </div>
+    <div id="automation">
+        Language:
+        <select>
+            <option value="english">English</option>
+    </select><br><br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Start time
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; End time
+            <!-- <select name="automation" id="auto0" style="display: inline-block;">
+            </select> -->
+    </div>
+    <br>
+<div id="recorddiv">
+    <button style="display: inline-block" onclick="automate()" id="record">Record</button>
+        <select id="speed">
+            <option selected value="real-time">real time</option><!-- 
+            <option value="2">sped up 2x</option>
+            <option value="5">sped up 5x</option> -->
+            <option value="10">sped up 10x</option>
+            <option value="100">sped up 100x</option>
+        </select>
+    <button disabled style="display: inline-block" onclick="stop()" id="stop">Stop</button>
+    <p id="recording-status" style="color: red; font-weight:bold"></p>
+</div>
+</div>
+      <script src="handlers.js"></script>
+      <script type="text/javascript">init();</script>
+</body>
+</html>
